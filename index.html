@@ -12,7 +12,7 @@
 </head>
 <body>
 	<header>
-		<nav class="navbar navbar-dark bg-dark">
+		<nav class="navbar navbar-dark bg-info">
 			<div class="container">
 				<h1 class="navbar-brand m-0">
 					My Account App
@@ -23,25 +23,25 @@
 	<main class="pt-5">
 		<div class="container">
 			<div class="row">
-				<div class="col-4">
+				<div class="col-md-4">
 					<div class="card">
 						<div class="card-body">
 							<h2 class="card-title">My profile</h2>
 							<div class="profile-info">
 								<p>Hello, <strong>User</strong>!</p>
 							</div>
-							<button class="btn btn-sm btn-dark">Change profile info</button>
+							<button class="btn btn-info" data-toggle="modal" data-target="#change-profile">Change profile info</button>
 						</div>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col-md">
 					<div class="card">
 						<div class="card-body">
 							<h3 class="card-title">Address list</h3>
 							<div class="address-list">
 
 							</div>
-							<button class="btn btn-sm btn-dark disabled">manage addresses (soon)</button>
+							<button class="btn btn-info disabled">manage addresses (soon)</button>
 						</div>
 					</div>
 					<div class="card mt-3">
@@ -56,7 +56,47 @@
 			</div>
 		</div>
 	</main>
-	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<div class="modal" id="change-profile" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Change profile info</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="form-profile-info" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" class="form-control" id="name" placeholder="Enter your name">
+						</div>
+						<div class="form-group">
+							<label for="email">Email address</label>
+							<input type="email" class="form-control" id="email" placeholder="Enter your e-mail">
+						</div>
+						<div class="form-group">
+							<label for="age">Age</label>
+							<input type="number" min="0" class="form-control" id="age" placeholder="Enter your age">
+						</div>
+						<div class="form-group">
+							<label for="location">Location</label>
+							<input type="text" class="form-control" id="location" placeholder="Enter your location">
+						</div>
+						<div class="mt-4 btn-toolbar justify-content-between">
+							<div class="btn-group">
+								<button type="button" class="btn btn-dark " data-dismiss="modal">cancel</button>
+							</div>
+							<div class="btn-group">
+								<button type="submit" class="btn btn-info" id="submit-profile=info">Save changes</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.20/store.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
